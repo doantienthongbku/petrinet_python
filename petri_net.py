@@ -1,4 +1,8 @@
 class Place:
+    """
+    Place of Petri Network
+    """
+
     def __init__(self, holding):
         """
         holding is the number of token in the place
@@ -7,16 +11,24 @@ class Place:
 
 
 class ArcBase:
+    """
+    Base Arc of Petri Network
+    """
+
     def __init__(self, place, amount=1):
         """
-        - place: the place acting as source/target of the arc in the network
-        - amount: The amount of token removed/added from/to the place
+        place: the place acting as source/target of the arc in the network
+        amount: The amount of token removed/added from/to the place
         """
         self.place = place
         self.amount = amount
 
 
 class In(ArcBase):
+    """
+    In Arc of transition in Petri Network
+    """
+
     def trigger(self):
         """
         Remove token
@@ -31,6 +43,10 @@ class In(ArcBase):
 
 
 class Out(ArcBase):
+    """
+    Out Arc of transition in Petri Network
+    """
+
     def trigger(self):
         """
         Add token
@@ -39,6 +55,10 @@ class Out(ArcBase):
 
 
 class Transition:
+    """
+    Transition of Petri Network
+    """
+
     def __init__(self, in_arcs, out_arcs):
         """
         in_arcs: Collection of ingoing arcs
