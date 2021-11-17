@@ -26,8 +26,6 @@ ts = dict(
     )
 )
 
-print(ts.keys())
-
 num_fires = 3
 # random fire in dict of transitions
 firing_sequence = [choice(list(ts.keys())) for _ in range(num_fires)]
