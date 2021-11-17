@@ -7,8 +7,11 @@ In this code I implement Petri Network by python language
 - T: transitions
 - F: is a set of (directed) *arcs* (or flow relations)
     + In: set of in_arc of transition
-    + Out: set of in_arc of transition
+    + Out: set of out_arc of transition
 
 **To run this code, you should read the instruction in file run.py**
+```bash
+python petri_net.py --firings 10 --marking 1 2 3 2
+```
 
 **Reference:** https://en.wikipedia.org/wiki/Petri_net
