@@ -1,7 +1,20 @@
 from random import choice
 import petri_net
 
-ps = [petri_net.Place(m) for m in [1, 2, 3, 2]]
+# create list of token
+M0 = [1, 2, 3, 2]
+ps = [petri_net.Place(m) for m in M0]
+
+# create graph of PetriNet
+"""
+Sample:
+---------------<---------------
+|                             |
+|--> P0 --> T1 --> P1 --> T2--|
+            \           /  \
+             \         /    \---> P3
+              P2 -----/
+"""
 ts = dict(
     t1=petri_net.Transition(
         [petri_net.In(ps[0])],
